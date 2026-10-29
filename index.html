@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KC AI — Create videos with AI</title>
+<style>
+:root{--bg:#08090f;--panel:#11131d;--panel2:#171a27;--text:#f4f5fb;--muted:#9da3b8;--purple:#8b5cf6;--pink:#ec4899;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#30205d 0,transparent 40%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-.6px}.logo{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--purple),var(--pink));display:grid;place-items:center;font-weight:900}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer;color:white;background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 8px 28px #8b5cf633}.btn.secondary{background:#ffffff0b;border:1px solid var(--line);box-shadow:none}.hero{text-align:center;padding:78px 0 48px}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #a78bfa44;background:#a78bfa12;color:#c4b5fd;padding:8px 13px;border-radius:999px;font-size:12px;font-weight:700}.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.03;letter-spacing:-2.5px;margin:22px auto 16px;max-width:850px}.gradient{background:linear-gradient(90deg,#c4b5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;max-width:640px;margin:0 auto 28px;line-height:1.7}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.generator{margin:30px auto 0;max-width:850px;background:linear-gradient(180deg,#171827,#10121b);border:1px solid #ffffff18;border-radius:22px;padding:20px;text-align:left;box-shadow:0 25px 90px #0007}.tabs{display:flex;gap:8px;margin-bottom:15px}.tab{border:1px solid var(--line);background:#ffffff06;color:var(--muted);padding:9px 13px;border-radius:10px;cursor:pointer;font-size:13px}.tab.active{background:#8b5cf622;border-color:#8b5cf688;color:#ddd6fe}.prompt{width:100%;resize:vertical;min-height:115px;background:#090b13;border:1px solid var(--line);border-radius:14px;color:white;padding:16px;font:inherit;outline:none}.prompt:focus{border-color:#a78bfa}.genbottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}.settings{display:flex;gap:9px;flex-wrap:wrap}.settings select{background:#191b28;color:#d9dbea;border:1px solid var(--line);border-radius:10px;padding:10px}.section{padding:70px 0}.sectionhead{text-align:center;margin-bottom:34px}.sectionhead h2{font-size:clamp(28px,4vw,42px);margin:0 0 12px;letter-spacing:-1px}.sectionhead p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,#151725,#10121a);border:1px solid var(--line);border-radius:20px;padding:25px;position:relative}.card.featured{border-color:#a78bfa88;box-shadow:0 0 0 1px #a78bfa22,0 20px 60px #8b5cf61a}.badge{position:absolute;right:18px;top:18px;background:#8b5cf622;color:#c4b5fd;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}.plan{font-weight:800;font-size:15px;letter-spacing:.5px}.price{font-size:42px;font-weight:850;margin:15px 0 3px;letter-spacing:-1.5px}.price small{font-size:14px;color:var(--muted);font-weight:500;letter-spacing:0}.desc{color:var(--muted);font-size:13px;min-height:38px}.card ul{padding:0;list-style:none;margin:22px 0}.card li{padding:9px 0;color:#d5d8e5;font-size:14px}.card li:before{content:'✓';color:#a78bfa;margin-right:10px;font-weight:900}.card .btn{width:100%}.note{text-align:center;color:var(--muted);font-size:12px;margin-top:20px;line-height:1.6}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:22px;border:1px solid var(--line);border-radius:17px;background:#ffffff04}.feature .icon{font-size:24px}.feature h3{margin:12px 0 8px}.feature p{color:var(--muted);font-size:14px;line-height:1.6;margin:0}.footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#25283a;border:1px solid #ffffff20;color:white;padding:13px 18px;border-radius:12px;box-shadow:0 12px 40px #0008;display:none;z-index:10;max-width:90%;text-align:center}.upload{display:none}.uploadlabel{font-size:13px;color:#c4b5fd;cursor:pointer;padding:10px 12px;border:1px dashed #a78bfa66;border-radius:10px;display:inline-block}
+@media(max-width:760px){.navlinks{display:none}.hero{padding-top:55px}.cards,.features{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}.generator{padding:13px}.genbottom{align-items:stretch}.settings{width:100%}.settings select{flex:1}.genbottom .btn{width:100%}.section{padding:48px 0}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#top"><span class="logo">KC</span><span>KC <span class="gradient">AI</span></span></a>
+  <nav class="navlinks"><a href="#create">Create</a><a href="#features">Features</a><a href="#pricing">Pricing</a></nav>
+  <a class="btn" href="#pricing">Get Started</a>
+</header>
+<main id="top">
+<section class="wrap hero">
+  <span class="eyebrow">✦ YOUR AI VIDEO CREATIVE STUDIO</span>
+  <h1>Turn your ideas into<br><span class="gradient">videos with AI.</span></h1>
+  <p>Create cinematic clips, animated scenes and social videos from a simple text prompt or an image. Your imagination is the only limit.</p>
+  <div class="actions"><a class="btn" href="#create">Start creating&nbsp; ↗</a><a class="btn secondary" href="#pricing">Explore plans</a></div>
+  <div class="generator" id="create">
+    <div class="tabs"><button class="tab active" id="textTab" onclick="setMode('text')">✧ Text to video</button><button class="tab" id="imageTab" onclick="setMode('image')">▧ Image to video</button></div>
+    <textarea class="prompt" id="prompt" placeholder="Describe the video you want to create... e.g. A tiny astronaut walking through a glowing forest, cinematic lighting, smooth camera movement."></textarea>
+    <div id="uploadRow" style="display:none;margin-top:12px"><label class="uploadlabel" for="imageUpload">＋ Upload an image</label><input class="upload" id="imageUpload" type="file" accept="image/*"/><span id="fileName" style="color:var(--muted);font-size:12px;margin-left:10px"></span></div>
+    <div class="genbottom"><div class="settings"><select id="ratio"><option value="9:16">Portrait · 9:16</option><option value="16:9">Landscape · 16:9</option><option value="1:1">Square · 1:1</option></select><select id="duration"><option value="5">5 seconds</option><option value="10">10 seconds</option></select><select id="quality"><option>Standard</option><option>HD</option></select></div><button class="btn" onclick="generate()">Generate video ✦</button></div>
+  </div>
+  <p style="font-size:12px;margin-top:14px">New users can explore the demo. Real video generation requires connecting an AI video API.</p>
+</section>
+<section class="wrap section" id="features">
+  <div class="sectionhead"><h2>Everything you need to <span class="gradient">create</span></h2><p>From a quick idea to a video ready to share.</p></div>
+  <div class="features">
+    <div class="feature"><div class="icon">✍️</div><h3>Text to video</h3><p>Describe a scene in your own words and turn it into a video concept.</p></div>
+    <div class="feature"><div class="icon">🖼️</div><h3>Image to video</h3><p>Bring a still image to life with motion and creative direction.</p></div>
+    <div class="feature"><div class="icon">⚡</div><h3>Made for creators</h3><p>Choose an aspect ratio and duration for social clips and creative projects.</p></div>
+  </div>
+</section>
+<section class="wrap section" id="pricing">
+  <div class="sectionhead"><h2>Simple, creator-friendly <span class="gradient">pricing</span></h2><p>Choose a plan that fits your creative flow.</p></div>
+  <div class="cards">
+    <article class="card"><div class="plan">BASIC</div><div class="price">₹149<small> / month</small></div><p class="desc">For getting started with AI video.</p><ul><li>Starter video credits</li><li>Text-to-video access</li><li>Standard generation queue</li><li>Basic export options</li></ul><button class="btn secondary" onclick="subscribe('BASIC',149)">Choose Basic</button></article>
+    <article class="card featured"><span class="badge">POPULAR</span><div class="plan">PRO</div><div class="price">₹299<small> / month</small></div><p class="desc">For regular creators and social content.</p><ul><li>More video credits</li><li>Text and image-to-video</li><li>Priority generation queue</li><li>HD export (when supported)</li></ul><button class="btn" onclick="subscribe('PRO',299)">Choose Pro</button></article>
+    <article class="card"><div class="plan">PREMIUM</div><div class="price">₹599<small> / month</small></div><p class="desc">For creators who need more creative output.</p><ul><li>Highest included video credits</li><li>Text and image-to-video</li><li>Priority generation queue</li><li>Premium export options</li></ul><button class="btn secondary" onclick="subscribe('PREMIUM',599)">Choose Premium</button></article>
+  </div>
+  <p class="note">After selecting a plan, scan the UPI QR code to pay. This demo does not automatically verify payments or activate subscriptions.</p>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 KC AI. Create something amazing.</span><span>AI-powered video creation · Made for creators</span></footer>
+<div class="toast" id="toast"></div>
+<div id="paymentModal" style="display:none;position:fixed;inset:0;background:#000b;z-index:20;overflow:auto;padding:24px">
+  <div style="max-width:460px;margin:4vh auto;background:#11131d;border:1px solid #ffffff22;border-radius:20px;padding:24px;text-align:center;position:relative">
+    <button onclick="closePayment()" aria-label="Close" style="position:absolute;right:14px;top:12px;background:#ffffff12;color:white;border:0;border-radius:8px;padding:8px 12px;cursor:pointer">✕</button>
+    <h2 style="margin:8px 0">Complete your payment</h2>
+    <p id="paymentPlan" style="color:#c4b5fd;font-weight:800;font-size:20px"></p>
+    <img src="payment-qr.jpeg" alt="KC AI UPI payment QR code" style="display:block;width:min(100%,300px);margin:16px auto;border-radius:12px;background:white" />
+    <p style="margin:8px 0;font-weight:700">Kaushal Kumar</p>
+    <p style="margin:4px 0;color:#cbd5e1;word-break:break-word">UPI ID: kaushalkumar2449@naviaxis</p>
+    <p style="font-size:13px;color:#9da3b8;line-height:1.6">Scan using any UPI app and pay the exact plan amount. Keep your payment screenshot/transaction ID. Your subscription will only be activated after payment is manually verified by the site admin.</p>
+    <button class="btn secondary" style="width:100%;margin-top:8px" onclick="closePayment()">Done</button>
+  </div>
+</div>
+<script>
+let mode='text';
+function setMode(next){mode=next;document.getElementById('textTab').classList.toggle('active',mode==='text');document.getElementById('imageTab').classList.toggle('active',mode==='image');document.getElementById('uploadRow').style.display=mode==='image'?'block':'none';document.getElementById('prompt').placeholder=mode==='image'?'Describe how you want your uploaded image to move...':'Describe the video you want to create...';}
+document.getElementById('imageUpload').addEventListener('change',e=>{document.getElementById('fileName').textContent=e.target.files[0]?.name||''});
+function toast(message){const t=document.getElementById('toast');t.textContent=message;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',4500)}
+function generate(){const prompt=document.getElementById('prompt').value.trim();if(!prompt){toast('Please enter a video prompt first.');return}if(mode==='image'&&!document.getElementById('imageUpload').files.length){toast('Please upload an image for Image to Video.');return}toast('Demo UI only: connect an AI video API to generate and download real videos.');}
+function subscribe(plan,price){document.getElementById('paymentPlan').textContent=plan+' — ₹'+price+'/month';document.getElementById('paymentModal').style.display='block';document.body.style.overflow='hidden';}
+function closePayment(){document.getElementById('paymentModal').style.display='none';document.body.style.overflow='';}
+</script>
+</body>
+</html>
